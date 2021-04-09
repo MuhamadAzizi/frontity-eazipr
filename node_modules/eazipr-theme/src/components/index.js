@@ -1,14 +1,14 @@
 import React from 'react'
-import { connect, Head, styled, css } from 'frontity'
+import { connect, Head, styled } from 'frontity'
 import Link from '@frontity/components/link'
 import Switch from '@frontity/components/switch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faWordpress, faBootstrap } from '@fortawesome/free-brands-svg-icons'
-// import { faReact } from '@fortawesome/free-solid-svg-icons'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 import List from './list'
 import Page from './page'
 import Post from './post'
+import Error from './error'
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -35,7 +35,7 @@ const Root = ({ state }) => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" link="/">Home</Link>
+                                <Link className="nav-link" link="/">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" link="/about">About</Link>
@@ -43,13 +43,16 @@ const Root = ({ state }) => {
                             <li className="nav-item">
                                 <Link className="nav-link" link="/contact">Contact</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" link="/error">Error</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <div className="border py-2">
                 <form className="container form-inline my-2 my-lg-0 d-flex flex-row align-items-center">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Cari artikel" aria-label="Search" style={{marginRight: '1rem'}}/>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Still not working" aria-label="Search" style={{marginRight: '1rem'}}/>
                     <button className="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -60,15 +63,8 @@ const Root = ({ state }) => {
                         <List when={data.isArchive}/>
                         <Post when={data.isPost}/>
                         <Page when={data.isPage}/>
+                        <Error when={data.isError}/>
                     </Switch>
-
-                    <aside className="col-lg-4">
-                        <div className="border rounded p-4 mb-4">
-                            <div className="bg-dark mx-auto d-block text-center text-light" style={{width: '250px', height: '250px'}}>
-                                Masih dalam tahap pengembangan
-                            </div>
-                        </div>
-                    </aside>
                 </div>
             </div>
             <footer className="bg-dark text-light text-center p-4">
