@@ -1,0 +1,36 @@
+{
+  "name": "eazipr-frontity",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@frontity/core": "^1.11.1",
+    "@frontity/html2react": "^1.6.2",
+    "@frontity/mars-theme": "./packages/mars-theme",
+    "@frontity/tiny-router": "^1.4.1",
+    "@frontity/wp-source": "^1.11.2",
+    "bootstrap": "^5.0.0-beta3",
+    "dayjs": "^1.10.4",
+    "eazipr-theme": "file:packages/eazipr-theme",
+    "frontity": "^1.14.3",
+    "react-truncate": "^2.4.0"
+  }
+}
